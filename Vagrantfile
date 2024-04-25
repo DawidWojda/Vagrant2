@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
-    config.vim.box = "bento/ubuntu-20.04"
+    config.vm.box = "bento/ubuntu-20.04"
 
-    config.vim.provider "virutalbox" do |v|
+    config.vm.provider "virutalbox" do |v|
         v.memory = 10240
         v.cpus = 3
     end
