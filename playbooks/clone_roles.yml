@@ -13,8 +13,8 @@
         mode: '0755'
     - name: Git checkout
       git:
-        repo: {{ git_repository }}
+        repo: "{{ git_repository }}"
         dest: "/etc/ansible/roles"
-        version: {{ git_branch }}
+        version: "{{ git_branch }}"
         
 
