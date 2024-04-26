@@ -1,0 +1,20 @@
+---
+- name: Klonowanie ról User i Packages
+  hosts: all
+  become: true
+  vars:
+    git_repository: "https://github.com/DawidWojda/Ansible_roles2.git"
+    git_branch: "main"
+  tasks:
+    - name: tworzenie folderu /etc/ansible/roles
+      file:
+        path: "/etc/ansible/roles"
+        state: "directory"
+        mode: '0755'
+    - name: Git checkout
+      git:
+        repo: {{ git_repository }}
+        dest: "/etc/ansible/roles"
+        version: {{ git_branch }}
+        
+
